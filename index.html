@@ -3,73 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Bistrot Gourmet</title>
-    <!-- On lie le fichier CSS externe ici -->
+    <title>Le Bistrot Gourmet | Restaurant Gastronomique Paris 1er</title>
+    <meta name="description" content="Réservez en direct ou commandez en Click & Collect au Bistrot Gourmet. Cuisine maison, produits locaux à Paris 1er.">
     <link rel="stylesheet" href="style.css">
+
+    <!-- SEO LOCAL : Données structurées Schema.org (Google Maps & Recherche locale) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Le Bistrot Gourmet",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      "telephone": "+33142680000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Rue de la Gastronomie",
+        "addressLocality": "Paris",
+        "postalCode": "75001",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.85837,
+        "longitude": 2.29229
+      },
+      "servesCuisine": "Française",
+      "priceRange": "€€",
+      "hasMenu": "https://lebistrotgourmet.fr/#carte",
+      "acceptsReservations": "True"
+    }
+    </script>
 </head>
 <body>
 
-    <header>
-        <header>
-        <!-- Barre de navigation -->
-        <nav class="navbar">
+    <!-- Barre de Navigation -->
+    <header class="navbar">
+        <div class="logo">Le Bistrot Gourmet</div>
+        <nav>
             <ul class="nav-links">
-                <li><a href="#presentation">Le Restaurant</a></li>
-                <li><a href="#plats">La Carte</a></li>
-                <li><a href="#lieu">L'Ambiance</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#carte">La Carte</a></li>
+                <li><a href="#click-collect">Click & Collect</a></li>
+                <li><a href="#fidelite">Club VIP</a></li>
+                <li><a href="#reservation" class="btn-nav">Réserver sans frais</a></li>
             </ul>
         </nav>
-        
-        <div class="banniere">
-            <h1>Le Bistrot Gourmet</h1>
-            <p>Une expérience culinaire authentique et moderne</p>
+    </header>
+
+    <!-- Hero Section avec conversion immédiate -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <span class="badge-direct">⚡ Réservation & Commande 100% Directe</span>
+            <h1>Cuisine Authentique & Produits de Saison</h1>
+            <p>Commandez à emporter ou réservez votre table sans frais d'intermédiaire.</p>
+            <div class="hero-buttons">
+                <a href="#click-collect" class="btn btn-primary">🛍️ Click & Collect (0% Commission)</a>
+                <a href="#reservation" class="btn btn-secondary">📅 Réserver une Table</a>
+            </div>
         </div>
-    </header>
-    </header>
+    </section>
+
+    <!-- BARRE FIXE MOBILE (Apparaît uniquement sur smartphone) -->
+    <div class="mobile-sticky-bar">
+        <a href="tel:0142680000" class="sticky-btn call">📞 Appeler</a>
+        <a href="#click-collect" class="sticky-btn collect">🛍️ À emporter</a>
+        <a href="#reservation" class="sticky-btn book">📅 Réserver</a>
+    </div>
 
     <main>
-        <!-- Section : Courte présentation -->
-        <section id="presentation">
-            <h2>À propos de nous</h2>
-            <p>Situé au cœur de la ville, notre restaurant vous accueille dans un cadre chaleureux. Notre chef prépare chaque jour des plats faits maison, en privilégiant les circuits courts et les produits de saison.</p>
-        </section>
+        <!-- Section La Carte -->
+        <section id="carte" class="section-container reveal">
+            <h2 class="section-title">Notre Carte du Marché</h2>
+            <p class="section-subtitle">Plats préparés sur place par notre Chef</p>
 
-        <!-- Section : Présentation des plats -->
-        <section id="plats">
-            <h2>Nos Plats Signatures</h2>
-            <div class="grille-plats">
-                <!-- On utilise "article" pour chaque élément du menu -->
-                <article class="plat">
-                    <h3>Tartare de Saumon</h3>
-                    <p>Frais, avocat, coriandre et citron vert.</p>
-                </article>
-                <article class="plat">
-                    <h3>Bœuf Bourguignon</h3>
-                    <p>Mijoté 6 heures, accompagné de grenailles rôties.</p>
-                </article>
-                <article class="plat">
-                    <h3>Tarte Tatin</h3>
-                    <p>Pommes caramélisées et sa boule de glace vanille.</p>
-                </article>
+            <div class="menu-categories">
+                <div class="category">
+                    <h3>Plats Principaux</h3>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Filet de Bœuf Aubrac Rôti</span>
+                            <span class="item-price">32 €</span>
+                        </div>
+                        <p class="item-desc">Jus corsé au thym, mousseline de pommes de terre.</p>
+                        <button class="btn-select-item" data-plat="Filet de Bœuf" data-prix="32">Ajouter au Click & Collect</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Risotto aux Champignons des Bois</span>
+                            <span class="item-price">24 €</span>
+                        </div>
+                        <p class="item-desc">Riz Carnaroli, cèpes poêlés, tuile de Parmigiano.</p>
+                        <button class="btn-select-item" data-plat="Risotto Champignons" data-prix="24">Ajouter au Click & Collect</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Section : Photos du lieu -->
-        <section id="lieu">
-            <h2>Découvrez le lieu</h2>
-            <div class="grille-photos">
-                <!-- Remplacez les liens "src" par vos propres images -->
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500" alt="Salle principale du restaurant">
-                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=500" alt="Terrasse extérieure">
-                <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=500" alt="Détail de décoration de table">
+       
+        <!-- Exemple d'item de carte avec intégration discrète du bouton -->
+<div class="menu-item">
+    <div class="item-header">
+        <span class="item-name">Filet de Bœuf Aubrac Rôti</span>
+        <span class="item-price">32 €</span>
+    </div>
+    <p class="item-desc">Jus corsé au thym, mousseline de pommes de terre de l'Île de Ré.</p>
+    <button class="btn-add-inline" data-plat="Filet de Bœuf Aubrac" data-prix="32">+ Commander</button>
+</div>
+
+<!-- Section Click & Collect harmonisée -->
+<section id="click-collect" class="section-container section-cc reveal">
+    <h2 class="section-title">Commande Directe</h2>
+    <p class="section-subtitle">Retrait rapide en restaurant sans frais d'intermédiaire</p>
+
+    <div class="click-collect-grid">
+        <div class="cc-info">
+            <h3>Pourquoi commander en direct ?</h3>
+            <ul class="cc-benefits">
+                <li>✓ <strong>10% de réduction</strong> appliquée automatiquement sur le emporter</li>
+                <li>✓ Des produits emballés dans des éco-conteneurs thermiques</li>
+                <li>✓ Commande prête à l'heure exacte de votre choix</li>
+            </ul>
+        </div>
+
+        <div class="cc-cart-card">
+            <h3>Votre Sélections</h3>
+            <div id="cart-items">
+                <p class="empty-cart">Cliquez sur "+ Commander" depuis la carte ci-dessus pour ajouter vos plats.</p>
+            </div>
+            <div class="cart-total">Total : <span id="cart-price">0</span> €</div>
+
+            <form id="order-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nom complet" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Téléphone" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="time" class="form-control" value="12:30" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Valider le retrait</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Barre Fixe Mobile sobre -->
+<div class="mobile-sticky-bar">
+    <a href="tel:0142680000" class="sticky-btn">Appeler</a>
+    <a href="#carte" class="sticky-btn highlight">La Carte</a>
+    <a href="#reservation" class="sticky-btn">Réserver</a>
+</div>
+
+        <!-- Section CAPTURE DE DONNÉES CLIENT (Fidélisation) -->
+        <section id="fidelite" class="section-container reveal">
+            <div class="loyalty-box">
+                <h2>Rejoignez le Club Gourmand</h2>
+                <p>Recevez nos menus de fêtes en avant-première et bénéficiez de **10% de réduction** sur votre prochaine visite.</p>
+                <form id="loyalty-form" class="inline-form">
+                    <input type="email" placeholder="Entrez votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section Réservation -->
+        <section id="reservation" class="section-container bg-light reveal">
+            <div class="reservation-wrapper">
+                <h2>Réserver une Table</h2>
+                <p class="direct-booking-tag">🔒 Réservation en direct confirmée par SMS immédiat</p>
+
+                <form class="booking-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" required placeholder="Jean Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" required placeholder="06 12 34 56 78">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Personnes</label>
+                            <input type="number" id="guests" min="1" max="8" value="2" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirmer la réservation</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>Contact : contact@lebistrotgourmet.fr | Téléphone : 01 23 45 67 89</p>
+    <footer id="contact">
+        <p>Le Bistrot Gourmet — 12 Rue de la Gastronomie, 75001 Paris | Tél : 01 42 68 00 00</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
