@@ -90,3 +90,64 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
 }
+/* --- ANIMATION GLOBALE --- */
+/* Active un défilement fluide au lieu d'un saut brutal lors du clic sur un lien du menu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- BARRE DE NAVIGATION --- */
+.navbar {
+    background-color: #1a252f;
+    /* Garde le menu accroché en haut de l'écran lors du défilement */
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none; /* Enlève les puces de la liste */
+    padding: 1rem 0;
+    gap: 3rem; /* Espace entre chaque lien */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+/* --- ANIMATION AU SURVOL (Le trait qui se dessine) --- */
+/* On crée un trait virtuel sous le lien, de largeur 0 au départ */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e67e22;
+    transition: width 0.3s ease; /* Vitesse à laquelle le trait se dessine */
+}
+
+/* Au survol de la souris, le texte change de couleur... */
+.nav-links a:hover {
+    color: #e67e22;
+}
+
+/* ...et le trait passe de 0% à 100% de largeur */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- MISE EN FORME DE LA BANNIERE --- */
+.banniere {
+    padding: 4rem 1rem;
+}
