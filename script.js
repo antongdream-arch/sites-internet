@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. ANIMATION AU SCROLL (IntersectionObserver)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -11,40 +10,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    // 2. LOGIQUE DU PANIER CLICK & COLLECT SIMPLIFIÉ
     let total = 0;
     const cartItemsContainer = document.getElementById("cart-items");
     const cartPriceElement = document.getElementById("cart-price");
 
-    document.querySelectorAll(".btn-select-item").forEach(button => {
+    document.querySelectorAll(".btn-add-inline").forEach(button => {
         button.addEventListener("click", (e) => {
             const plat = e.target.getAttribute("data-plat");
             const prix = parseFloat(e.target.getAttribute("data-prix"));
 
-            // Supprimer le message "Panier vide" au premier ajout
             if (document.querySelector(".empty-cart")) {
                 cartItemsContainer.innerHTML = "";
             }
 
-            // Ajouter l'élément au panier visuel
             const itemElement = document.createElement("div");
-            itemElement.className = "cart-item-row";
+            itemElement.style.display = "flex";
+            itemElement.style.justifyContent = "space-between";
+            itemElement.style.padding = "0.4rem 0";
+            itemElement.style.fontSize = "0.9rem";
+            itemElement.style.borderBottom = "1px solid var(--border)";
             itemElement.innerHTML = `<span>${plat}</span> <strong>${prix} €</strong>`;
+            
             cartItemsContainer.appendChild(itemElement);
 
-            // Mise à jour du prix total
             total += prix;
             cartPriceElement.textContent = total;
         });
     });
 
-    // 3. SOUMISSION DU FORMULAIRE DE COMMANDE
     document.getElementById("order-form").addEventListener("submit", (e) => {
         e.preventDefault();
         if (total === 0) {
-            alert("Veuillez sélectionner au moins un plat dans la carte.");
+            /* MODIFIABLE : Message d'erreur panier vide */
+            alert("Veuillez ajouter au moins un plat à votre commande.");
             return;
         }
-        alert(`Commande validée ! Montant à régler au retrait : ${total} €. Un SMS de confirmation vous a été envoyé.`);
+        /* MODIFIABLE : Message de confirmation après commande */
+        alert(`Votre commande a été envoyée ! Montant à régler lors du retrait : ${total} €.`);
+    });
+});
+const filterButtons = document.querySelectorAll(".filter-btn");
+const menuBlocks = document.querySelectorAll(".menu-section-block");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filterValue = button.getAttribute("data-filter");
+
+        menuBlocks.forEach(block => {
+            if (filterValue === "all" || block.getAttribute("data-category") === filterValue) {
+                block.classList.remove("hidden");
+            } else {
+                block.classList.add("hidden");
+            }
+        });
     });
 });
