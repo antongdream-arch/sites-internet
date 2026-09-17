@@ -3,136 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- MODIFIABLE : Titre et description de la page pour le référencement -->
     <title>Le Bistrot Gourmet | Restaurant Gastronomique Paris 1er</title>
-    <meta name="description" content="Réservez en direct ou commandez en Click & Collect au Bistrot Gourmet. Cuisine maison et produits locaux.">
     <link rel="stylesheet" href="style.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      /* MODIFIABLE : Informations transmises à Google pour le référencement local */
-      "name": "Le Bistrot Gourmet",
-      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-      "telephone": "+33142680000",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "12 Rue de la Gastronomie",
-        "addressLocality": "Paris",
-        "postalCode": "75001",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.85837,
-        "longitude": 2.29229
-      },
-      "servesCuisine": "Française",
-      "priceRange": "€€",
-      "hasMenu": "https://lebistrotgourmet.fr/menu.html",
-      "acceptsReservations": "True"
-    }
-    </script>
 </head>
 <body>
 
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <!-- MODIFIABLE : Nom du restaurant -->
         <div class="logo"><a href="index.html">Le Bistrot Gourmet</a></div>
         
-        <!-- Bouton Menu Hamburger pour Mobile -->
-        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
 
         <nav>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="menu.html">La Carte</a></li>
-                <li><a href="#click-collect">À Emporter</a></li>
-                <li><a href="#fidelite">Club VIP</a></li>
-                <li><a href="#reservation" class="btn-nav">Réserver</a></li>
+                <li><a href="contact.html">Contact & Accès</a></li>
+                <li><a href="index.html#reservation" class="btn-nav">Réserver</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero" class="hero-section">
+    <section class="hero-section">
         <div class="hero-content">
-            <!-- MODIFIABLE : Accroche principale de l'accueil -->
+            <!-- MODIFIABLE : Slogan et texte d'accroche -->
             <span class="badge-direct">Réservation & Commande Directe</span>
-            <h1>Une expérience culinaire d'exception</h1>
-            <p>Découvrez notre cuisine de saison préparée chaque jour avec des produits locaux sélectionnés.</p>
+            <h1>L'élégance du goût,<br>l'authenticité du terroir.</h1>
+            <p>Découvrez notre cuisine de saison préparée chaque jour avec passion et précision.</p>
             <div class="hero-buttons">
-                <a href="menu.html" class="btn btn-primary">Découvrir toute la carte</a>
+                <a href="menu.html" class="btn btn-primary">Découvrir la carte</a>
                 <a href="#reservation" class="btn btn-secondary">Réserver une table</a>
             </div>
         </div>
     </section>
 
-    <!-- Barre Fixe Mobile (Affichée uniquement sur smartphone) -->
-    <div class="mobile-sticky-bar">
-        <!-- MODIFIABLE : Numéro de téléphone pour appel direct -->
-        <a href="tel:0142680000" class="sticky-btn">Appeler</a>
-        <a href="menu.html" class="sticky-btn highlight">La Carte</a>
-        <a href="#reservation" class="sticky-btn">Réserver</a>
-    </div>
-
     <main>
-        <!-- Section Aperçu de la Carte -->
-        <section id="carte-preview" class="section-container reveal">
-            <h2 class="section-title">Aperçu de nos Plats Signatures</h2>
-            <p class="section-subtitle">Un extrait de nos créations du moment préparées par notre Chef</p>
+        <!-- Section Aperçu de la carte -->
+        <section class="section-container">
+            <h2 class="section-title">Créations Signatures</h2>
+            <p class="section-subtitle">Un aperçu de notre savoir-faire culinaire du moment</p>
 
             <div class="menu-categories">
-                <div class="category">
-                    <h3>Les Incontournables</h3>
-                    
-                    <!-- MODIFIABLE : Plats phares sur la page d'accueil -->
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Filet de Bœuf Aubrac Rôti</span>
-                            <span class="item-price">32 €</span>
-                        </div>
-                        <p class="item-desc">Jus corsé au thym, mousseline de pommes de terre à la fleur de sel.</p>
-                        <button class="btn-add-inline" data-plat="Filet de Bœuf Aubrac" data-prix="32">+ Commander</button>
+                <!-- MODIFIABLE : Plats phares présentés sur l'accueil -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Filet de Bœuf Aubrac Rôti</span>
+                        <span class="item-price">32 €</span>
                     </div>
-
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Risotto aux Champignons des Bois</span>
-                            <span class="item-price">24 €</span>
-                        </div>
-                        <p class="item-desc">Riz Carnaroli, cèpes poêlés, tuile de Parmigiano Reggiano 24 mois.</p>
-                        <button class="btn-add-inline" data-plat="Risotto Champignons" data-prix="24">+ Commander</button>
+                    <p class="item-desc">Jus corsé au thym sauvage, mousseline soyeuse de pommes de terre à la fleur de sel.</p>
+                    <button class="btn-add-inline" data-plat="Filet de Bœuf Aubrac" data-prix="32">Commander</button>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Risotto aux Champignons des Bois</span>
+                        <span class="item-price">24 €</span>
                     </div>
-
+                    <p class="item-desc">Riz Carnaroli onctueux, cèpes poêlés, tuile croustillante de Parmigiano Reggiano 24 mois.</p>
+                    <button class="btn-add-inline" data-plat="Risotto Champignons" data-prix="24">Commander</button>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2.5rem;">
-                <a href="menu.html" class="btn btn-primary">Consulter la carte complète & les menus</a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="menu.html" class="btn btn-secondary" style="color:var(--dark); border-color:var(--border);">Voir toute la carte & nos menus</a>
             </div>
         </section>
 
         <!-- Section Click & Collect -->
-        <section id="click-collect" class="section-container section-cc reveal">
+        <section id="click-collect" class="section-container section-cc">
             <h2 class="section-title">Commande en Direct</h2>
             <p class="section-subtitle">Retrait rapide en restaurant sans frais d'intermédiaire</p>
 
             <div class="click-collect-grid">
                 <div class="cc-info">
                     <h3>Les avantages du retrait sur place</h3>
-                    <!-- MODIFIABLE : Arguments commerciaux -->
+                    <!-- MODIFIABLE : Avantages Click & Collect -->
                     <ul class="cc-benefits">
                         <li>✓ <strong>10% de réduction</strong> appliquée automatiquement sur le prix des plats</li>
-                        <li>✓ Emballages écologiques maintenant vos plats à température</li>
-                        <li>✓ Commande prête à l'heure exacte de votre choix</li>
+                        <li>✓ Emballages écologiques premium maintenant vos plats à température</li>
+                        <li>✓ Commande préparée à l'heure exacte de votre choix</li>
                     </ul>
                 </div>
 
                 <div class="cc-cart-card">
                     <h3>Votre Sélection</h3>
                     <div id="cart-items">
-                        <p class="empty-cart">Cliquez sur "+ Commander" pour ajouter vos plats.</p>
+                        <p class="empty-cart">Cliquez sur "Commander" pour ajouter vos plats.</p>
                     </div>
                     <div class="cart-total">Total : <span id="cart-price">0</span> €</div>
 
@@ -155,11 +114,11 @@
         </section>
 
         <!-- Section Club VIP -->
-        <section id="fidelite" class="section-container reveal">
+        <section class="section-container">
             <div class="loyalty-card">
-                <!-- MODIFIABLE : Contenu de la section Club VIP -->
+                <!-- MODIFIABLE : Texte de la newsletter -->
                 <h2>Rejoignez le Club Gourmand</h2>
-                <p>Inscrivez-vous pour recevoir nos cartes de saison et bénéficier d'offres exclusives.</p>
+                <p>Inscrivez-vous pour recevoir nos cartes de saison et bénéficier d'invitations exclusives.</p>
                 <form id="loyalty-form" class="inline-form">
                     <input type="email" class="form-control" placeholder="Votre adresse e-mail" required>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
@@ -168,10 +127,10 @@
         </section>
 
         <!-- Section Réservation -->
-        <section id="reservation" class="section-container reveal">
+        <section id="reservation" class="section-container">
             <div class="reservation-wrapper">
                 <h2 class="section-title">Réserver une Table</h2>
-                <p class="section-subtitle">Confirmation immédiate de votre réservation</p>
+                <p class="section-subtitle">Confirmation immédiate de votre table</p>
 
                 <form class="booking-form">
                     <div class="form-row">
@@ -209,7 +168,7 @@
         </section>
     </main>
 
-    <footer id="contact">
+    <footer>
         <div class="footer-grid">
             <div>
                 <!-- MODIFIABLE : Coordonnées du restaurant -->
@@ -222,13 +181,6 @@
                 <h3>Horaires</h3>
                 <p>Mardi - Samedi : 12h00 - 14h30 | 19h00 - 22h30</p>
                 <p>Dimanche & Lundi : Fermé</p>
-            </div>
-            <div>
-                <!-- MODIFIABLE : Carte Google Maps -->
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926156743895!3d48.85837007928757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1647528392000!5m2!1sfr!2sfr" 
-                    width="100%" height="130" style="border:0; border-radius: 6px;" allowfullscreen="" loading="lazy">
-                </iframe>
             </div>
         </div>
     </footer>

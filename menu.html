@@ -3,73 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- MODIFIABLE : Titre et description de la page Carte -->
-    <title>La Carte Complète | Le Bistrot Gourmet</title>
-    <meta name="description" content="Découvrez l'ensemble de nos entrées, plats, desserts, vins et formules du Bistrot Gourmet.">
+    <title>La Carte & Menus | Le Bistrot Gourmet</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <!-- MODIFIABLE : Nom du restaurant -->
         <div class="logo"><a href="index.html">Le Bistrot Gourmet</a></div>
         
-        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
 
         <nav>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="menu.html" class="active">La Carte</a></li>
-                <li><a href="index.html#click-collect">À Emporter</a></li>
-                <li><a href="index.html#fidelite">Club VIP</a></li>
+                <li><a href="contact.html">Contact & Accès</a></li>
                 <li><a href="index.html#reservation" class="btn-nav">Réserver</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="mobile-sticky-bar">
-        <!-- MODIFIABLE : Numéro de téléphone -->
-        <a href="tel:0142680000" class="sticky-btn">Appeler</a>
-        <a href="menu.html" class="sticky-btn highlight">La Carte</a>
-        <a href="index.html#reservation" class="sticky-btn">Réserver</a>
-    </div>
-
-    <main class="section-container">
+    <main class="section-container" style="padding-top: 8rem;">
         <h1 class="section-title">Notre Carte & Menus</h1>
-        <p class="section-subtitle">Une sélection généreuse cuisinée chaque jour à partir de produits frais et locaux</p>
+        <p class="section-subtitle">Élaborée avec soin à partir de produits frais et de saison</p>
 
-        <!-- Filtres interactifs par catégorie -->
+        <!-- Filtres par catégorie -->
         <div class="menu-filters">
             <button class="filter-btn active" data-filter="all">Tout voir</button>
             <button class="filter-btn" data-filter="entrees">Entrées</button>
             <button class="filter-btn" data-filter="plats">Plats</button>
             <button class="filter-btn" data-filter="desserts">Desserts</button>
             <button class="filter-btn" data-filter="boissons">Boissons & Vins</button>
-            <button class="filter-btn" data-filter="formules">Formules & Menus</button>
+            <button class="filter-btn" data-filter="formules">Formules</button>
         </div>
 
         <div class="menu-full-grid">
 
-            <!-- MODIFIABLE : FORMULES & MENUS -->
+            <!-- MODIFIABLE : FORMULES -->
             <div class="menu-section-block" data-category="formules">
-                <h2 class="category-header">Formules du Midi & Menus</h2>
+                <h2 class="category-header">Formules & Menus</h2>
                 <div class="items-grid">
-                    <div class="menu-card highlighted">
+                    <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Formule Express du Midi</span>
                             <span class="item-price">22 €</span>
                         </div>
-                        <p class="item-desc">Entrée + Plat ou Plat + Dessert. Du mardi au vendredi midi uniquement.</p>
-                        <button class="btn-add-inline" data-plat="Formule Express Midi" data-prix="22">+ Commander</button>
+                        <p class="item-desc">Entrée + Plat ou Plat + Dessert. Du mardi au vendredi midi.</p>
+                        <button class="btn-add-inline" data-plat="Formule Midi" data-prix="22">Commander</button>
                     </div>
-
-                    <div class="menu-card highlighted">
+                    <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Menu Dégustation (5 Services)</span>
                             <span class="item-price">58 €</span>
                         </div>
-                        <p class="item-desc">Voyage gastronomique composé par le Chef selon les arrivages du marché.</p>
-                        <button class="btn-add-inline" data-plat="Menu Dégustation 5 Services" data-prix="58">+ Commander</button>
+                        <p class="item-desc">Voyage gastronomique composé par le Chef selon les arrivages.</p>
+                        <button class="btn-add-inline" data-plat="Menu Dégustation" data-prix="58">Commander</button>
                     </div>
                 </div>
             </div>
@@ -84,34 +77,23 @@
                             <span class="item-price">12 €</span>
                         </div>
                         <p class="item-desc">Émulsion de noisette torréfiée et éclats de châtaignes grillées.</p>
-                        <button class="btn-add-inline" data-plat="Velouté de Potimarron" data-prix="12">+ Commander</button>
+                        <button class="btn-add-inline" data-plat="Velouté Potimarron" data-prix="12">Commander</button>
                     </div>
-
                     <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Foie Gras de Canard Maison</span>
                             <span class="item-price">18 €</span>
                         </div>
-                        <p class="item-desc">Chutney de figues de Solliès au vin chaud, brioche tiède toastée.</p>
-                        <button class="btn-add-inline" data-plat="Foie Gras Maison" data-prix="18">+ Commander</button>
+                        <p class="item-desc">Chutney de figues au vin chaud, brioche tiède toastée.</p>
+                        <button class="btn-add-inline" data-plat="Foie Gras Maison" data-prix="18">Commander</button>
                     </div>
-
                     <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Tartare de Saint-Jacques & Agrumes</span>
                             <span class="item-price">16 €</span>
                         </div>
                         <p class="item-desc">Mariné au citron vert, huile d'olive pimentée et perles de grenade.</p>
-                        <button class="btn-add-inline" data-plat="Tartare Saint-Jacques" data-prix="16">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Œuf Parfait Bresse-Gauloise</span>
-                            <span class="item-price">14 €</span>
-                        </div>
-                        <p class="item-desc">Cuit à 63°C, crème de sous-bois au parmesan et mouillettes à l'ail noir.</p>
-                        <button class="btn-add-inline" data-plat="Oeuf Parfait" data-prix="14">+ Commander</button>
+                        <button class="btn-add-inline" data-plat="Tartare Saint-Jacques" data-prix="16">Commander</button>
                     </div>
                 </div>
             </div>
@@ -125,53 +107,24 @@
                             <span class="item-name">Filet de Bœuf Aubrac Rôti</span>
                             <span class="item-price">32 €</span>
                         </div>
-                        <p class="item-desc">Jus corsé au thym, mousseline de pommes de terre à la fleur de sel.</p>
-                        <button class="btn-add-inline" data-plat="Filet de Bœuf Aubrac" data-prix="32">+ Commander</button>
+                        <p class="item-desc">Jus corsé au thym, mousseline soyeuse de pommes de terre.</p>
+                        <button class="btn-add-inline" data-plat="Filet de Bœuf Aubrac" data-prix="32">Commander</button>
                     </div>
-
                     <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Magret de Canard du Sud-Ouest</span>
                             <span class="item-price">28 €</span>
                         </div>
-                        <p class="item-desc">Sauce au miel de lavande et vinaigre de framboise, poêlée de légumes oubliés.</p>
-                        <button class="btn-add-inline" data-plat="Magret de Canard" data-prix="28">+ Commander</button>
+                        <p class="item-desc">Sauce au miel de lavande, poêlée de légumes oubliés.</p>
+                        <button class="btn-add-inline" data-plat="Magret de Canard" data-prix="28">Commander</button>
                     </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Dos de Cabillaud en Croûte d'Herbes</span>
-                            <span class="item-price">26 €</span>
-                        </div>
-                        <p class="item-desc">Fondue de poireaux au piment d'Espelette, beurre blanc au citron confit.</p>
-                        <button class="btn-add-inline" data-plat="Cabillaud Croûte d'Herbes" data-prix="26">+ Commander</button>
-                    </div>
-
                     <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Risotto aux Champignons des Bois</span>
                             <span class="item-price">24 €</span>
                         </div>
-                        <p class="item-desc">Riz Carnaroli, cèpes poêlés, tuile de Parmigiano Reggiano 24 mois.</p>
-                        <button class="btn-add-inline" data-plat="Risotto Champignons" data-prix="24">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Ravioles de Royan Artisanales</span>
-                            <span class="item-price">21 €</span>
-                        </div>
-                        <p class="item-desc">Crème infusée à la sauge fraîche, noisettes de Cancon torréfiées.</p>
-                        <button class="btn-add-inline" data-plat="Ravioles Artisanales" data-prix="21">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Côte de Veau Poêlée au Beurre Mousseux</span>
-                            <span class="item-price">34 €</span>
-                        </div>
-                        <p class="item-desc">Jus à la sauge, frites de polenta au romarin et légumes croquants.</p>
-                        <button class="btn-add-inline" data-plat="Côte de Veau" data-prix="34">+ Commander</button>
+                        <p class="item-desc">Riz Carnaroli, cèpes poêlés, tuile de Parmigiano Reggiano.</p>
+                        <button class="btn-add-inline" data-plat="Risotto Champignons" data-prix="24">Commander</button>
                     </div>
                 </div>
             </div>
@@ -185,77 +138,39 @@
                             <span class="item-name">Soufflé Chaud au Chocolat Valrhona</span>
                             <span class="item-price">13 €</span>
                         </div>
-                        <p class="item-desc">Cœur coulant chocolat noir 70%, glace artisanale à la vanille de Madagascar.</p>
-                        <button class="btn-add-inline" data-plat="Soufflé Chocolat Valrhona" data-prix="13">+ Commander</button>
+                        <p class="item-desc">Cœur coulant chocolat noir 70%, glace vanille de Madagascar.</p>
+                        <button class="btn-add-inline" data-plat="Soufflé Chocolat" data-prix="13">Commander</button>
                     </div>
-
                     <div class="menu-card">
                         <div class="item-header">
                             <span class="item-name">Tarte Tatin Revisitée</span>
                             <span class="item-price">11 €</span>
                         </div>
-                        <p class="item-desc">Pommes caramélisées au beurre salé, pâte feuilletée croustillante, crème double d'Isigny.</p>
-                        <button class="btn-add-inline" data-plat="Tarte Tatin" data-prix="11">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Mille-Feuille Vanille Bourbon</span>
-                            <span class="item-price">12 €</span>
-                        </div>
-                        <p class="item-desc">Feuilletage inversé caramel, crème diplomate vanille et éclats de praliné.</p>
-                        <button class="btn-add-inline" data-plat="Mille-Feuille Vanille" data-prix="12">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Café Gourmand & Ses Douceurs</span>
-                            <span class="item-price">10 €</span>
-                        </div>
-                        <p class="item-desc">Espresso accompagné de 4 mignardises élaborées par notre chef pâtissier.</p>
-                        <button class="btn-add-inline" data-plat="Café Gourmand" data-prix="10">+ Commander</button>
+                        <p class="item-desc">Pommes caramélisées au beurre salé, crème double d'Isigny.</p>
+                        <button class="btn-add-inline" data-plat="Tarte Tatin" data-prix="11">Commander</button>
                     </div>
                 </div>
             </div>
 
-            <!-- MODIFIABLE : BOISSONS & VINS -->
+            <!-- MODIFIABLE : BOISSONS -->
             <div class="menu-section-block" data-category="boissons">
                 <h2 class="category-header">Boissons & Vins</h2>
                 <div class="items-grid">
                     <div class="menu-card">
                         <div class="item-header">
-                            <span class="item-name">Chablis 1er Cru "Montmains" (Verre 12cl)</span>
+                            <span class="item-name">Chablis 1er Cru "Montmains" (Verre)</span>
                             <span class="item-price">9 €</span>
                         </div>
-                        <p class="item-desc">Vin blanc sec, notes minérales et d'agrumes. Idéal avec les poissons.</p>
-                        <button class="btn-add-inline" data-plat="Chablis 1er Cru (Verre)" data-prix="9">+ Commander</button>
+                        <p class="item-desc">Vin blanc sec, notes minérales et d'agrumes.</p>
+                        <button class="btn-add-inline" data-plat="Chablis 1er Cru" data-prix="9">Commander</button>
                     </div>
-
                     <div class="menu-card">
                         <div class="item-header">
-                            <span class="item-name">Saint-Émilion Grand Cru 2018 (Bouteille 75cl)</span>
+                            <span class="item-name">Saint-Émilion Grand Cru (Bouteille)</span>
                             <span class="item-price">48 €</span>
                         </div>
-                        <p class="item-desc">Rouge puissant et élégant, arômes de fruits noirs et de boisé fondu.</p>
-                        <button class="btn-add-inline" data-plat="Saint-Émilion Bouteille" data-prix="48">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Limonade Artisanale Bio (33cl)</span>
-                            <span class="item-price">5 €</span>
-                        </div>
-                        <p class="item-desc">Infusée aux citrons de Menton et pointe de menthe fraîche.</p>
-                        <button class="btn-add-inline" data-plat="Limonade Artisanale" data-prix="5">+ Commander</button>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="item-header">
-                            <span class="item-name">Eau Minérale Evian / San Pellegrino (1L)</span>
-                            <span class="item-price">6 €</span>
-                        </div>
-                        <p class="item-desc">Eau plate ou gazeuse au choix.</p>
-                        <button class="btn-add-inline" data-plat="Eau Minérale 1L" data-prix="6">+ Commander</button>
+                        <p class="item-desc">Rouge puissant et élégant, arômes de fruits noirs.</p>
+                        <button class="btn-add-inline" data-plat="Saint-Émilion Bouteille" data-prix="48">Commander</button>
                     </div>
                 </div>
             </div>
@@ -263,7 +178,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer style="margin-top: 5rem;">
         <div class="footer-grid">
             <div>
                 <h3>Le Bistrot Gourmet</h3>
@@ -273,7 +188,6 @@
             <div>
                 <h3>Horaires</h3>
                 <p>Mardi - Samedi : 12h00 - 14h30 | 19h00 - 22h30</p>
-                <p>Dimanche & Lundi : Fermé</p>
             </div>
         </div>
     </footer>

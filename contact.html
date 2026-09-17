@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Accès | Le Bistrot Gourmet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <!-- MODIFIABLE : Nom du restaurant -->
+        <div class="logo"><a href="index.html">Le Bistrot Gourmet</a></div>
+        
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html">La Carte</a></li>
+                <li><a href="contact.html" class="active">Contact & Accès</a></li>
+                <li><a href="index.html#reservation" class="btn-nav">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section-container" style="padding-top: 8rem;">
+        <h1 class="section-title">Contact & Localisation</h1>
+        <p class="section-subtitle">Venez nous rendre visite au cœur de Paris</p>
+
+        <div class="click-collect-grid">
+            <div class="cc-cart-card" style="background:#ffffff;">
+                <h3>Informations Pratiques</h3>
+                <p style="margin-bottom: 1rem;"><strong>Adresse :</strong><br>12 Rue de la Gastronomie, 75001 Paris</p>
+                <p style="margin-bottom: 1rem;"><strong>Téléphone :</strong><br>01 42 68 00 00</p>
+                <p style="margin-bottom: 1rem;"><strong>E-mail :</strong><br>contact@lebistrotgourmet.fr</p>
+                
+                <h3 style="margin-top: 2rem;">Horaires d'ouverture</h3>
+                <p style="margin-bottom: 0.5rem;">Mardi au Samedi :</p>
+                <p style="color:var(--text-muted); margin-bottom: 0.5rem;">12h00 - 14h30 | 19h00 - 22h30</p>
+                <p style="margin-bottom: 0.5rem;">Dimanche & Lundi :</p>
+                <p style="color:var(--text-muted);">Fermé</p>
+            </div>
+
+            <div class="cc-cart-card" style="background:#ffffff; padding: 1rem;">
+                <!-- MODIFIABLE : Intégration de la carte Google Maps -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926156743895!3d48.85837007928757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1647528392000!5m2!1sfr!2sfr" 
+                    width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 5rem;">
+        <div class="footer-grid">
+            <div>
+                <h3>Le Bistrot Gourmet</h3>
+                <p>12 Rue de la Gastronomie, 75001 Paris</p>
+                <p>Tél : 01 42 68 00 00</p>
+            </div>
+            <div>
+                <h3>Horaires</h3>
+                <p>Mardi - Samedi : 12h00 - 14h30 | 19h00 - 22h30</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
