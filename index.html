@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- MODIFIABLE : Titre et description de la page pour le référencement -->
     <title>Le Bistrot Gourmet | Restaurant Gastronomique Paris 1er</title>
-    <meta name="description" content="Réservez en direct ou commandez en Click & Collect au Bistrot Gourmet. Cuisine maison et produits locaux à Paris.">
+    <meta name="description" content="Réservez en direct ou commandez en Click & Collect au Bistrot Gourmet. Cuisine maison et produits locaux.">
     <link rel="stylesheet" href="style.css">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      /* MODIFIABLE : Informations transmises à Google pour la recherche locale et Google Maps */
+      /* MODIFIABLE : Informations transmises à Google pour le référencement local */
       "name": "Le Bistrot Gourmet",
       "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
       "telephone": "+33142680000",
@@ -39,10 +39,14 @@
 
     <header class="navbar">
         <!-- MODIFIABLE : Nom du restaurant -->
-        <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">Le Bistrot Gourmet</a></div>
+        <div class="logo"><a href="index.html">Le Bistrot Gourmet</a></div>
+        
+        <!-- Bouton Menu Hamburger pour Mobile -->
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+
         <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="menu.html">La Carte</a></li>
                 <li><a href="#click-collect">À Emporter</a></li>
                 <li><a href="#fidelite">Club VIP</a></li>
@@ -64,8 +68,9 @@
         </div>
     </section>
 
+    <!-- Barre Fixe Mobile (Affichée uniquement sur smartphone) -->
     <div class="mobile-sticky-bar">
-        <!-- MODIFIABLE : Numéro de téléphone pour appel direct sur mobile -->
+        <!-- MODIFIABLE : Numéro de téléphone pour appel direct -->
         <a href="tel:0142680000" class="sticky-btn">Appeler</a>
         <a href="menu.html" class="sticky-btn highlight">La Carte</a>
         <a href="#reservation" class="sticky-btn">Réserver</a>
@@ -81,7 +86,7 @@
                 <div class="category">
                     <h3>Les Incontournables</h3>
                     
-                    <!-- MODIFIABLE : Plats phares affichés sur la page d'accueil -->
+                    <!-- MODIFIABLE : Plats phares sur la page d'accueil -->
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Filet de Bœuf Aubrac Rôti</span>
@@ -116,7 +121,7 @@
             <div class="click-collect-grid">
                 <div class="cc-info">
                     <h3>Les avantages du retrait sur place</h3>
-                    <!-- MODIFIABLE : Arguments commerciaux du Click & Collect -->
+                    <!-- MODIFIABLE : Arguments commerciaux -->
                     <ul class="cc-benefits">
                         <li>✓ <strong>10% de réduction</strong> appliquée automatiquement sur le prix des plats</li>
                         <li>✓ Emballages écologiques maintenant vos plats à température</li>
@@ -149,7 +154,7 @@
             </div>
         </section>
 
-        <!-- Section Club VIP / Newsletter -->
+        <!-- Section Club VIP -->
         <section id="fidelite" class="section-container reveal">
             <div class="loyalty-card">
                 <!-- MODIFIABLE : Contenu de la section Club VIP -->
@@ -219,10 +224,10 @@
                 <p>Dimanche & Lundi : Fermé</p>
             </div>
             <div>
-                <!-- MODIFIABLE : Lien iframe de la carte Google Maps -->
+                <!-- MODIFIABLE : Carte Google Maps -->
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926156743895!3d48.85837007928757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1647528392000!5m2!1sfr!2sfr" 
-                    width="100%" height="120" style="border:0; border-radius: 6px;" allowfullscreen="" loading="lazy">
+                    width="100%" height="130" style="border:0; border-radius: 6px;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
         </div>

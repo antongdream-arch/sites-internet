@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- MODIFIABLE : Titre et description de la page Carte complet -->
+    <!-- MODIFIABLE : Titre et description de la page Carte -->
     <title>La Carte Complète | Le Bistrot Gourmet</title>
-    <meta name="description" content="Découvrez l'ensemble de nos entrées, plats, desserts, vins et formules à emporter ou à déguster sur place.">
+    <meta name="description" content="Découvrez l'ensemble de nos entrées, plats, desserts, vins et formules du Bistrot Gourmet.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="navbar">
         <!-- MODIFIABLE : Nom du restaurant -->
-        <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">Le Bistrot Gourmet</a></div>
+        <div class="logo"><a href="index.html">Le Bistrot Gourmet</a></div>
+        
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+
         <nav>
-            <ul class="nav-links">
-                <li><a href="index.html#hero">Accueil</a></li>
-                <li><a href="menu.html" class="active">La Carte Complète</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html" class="active">La Carte</a></li>
                 <li><a href="index.html#click-collect">À Emporter</a></li>
+                <li><a href="index.html#fidelite">Club VIP</a></li>
                 <li><a href="index.html#reservation" class="btn-nav">Réserver</a></li>
             </ul>
         </nav>
@@ -34,7 +38,7 @@
         <h1 class="section-title">Notre Carte & Menus</h1>
         <p class="section-subtitle">Une sélection généreuse cuisinée chaque jour à partir de produits frais et locaux</p>
 
-        <!-- Barre de filtres par catégorie -->
+        <!-- Filtres interactifs par catégorie -->
         <div class="menu-filters">
             <button class="filter-btn active" data-filter="all">Tout voir</button>
             <button class="filter-btn" data-filter="entrees">Entrées</button>
@@ -262,13 +266,11 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <!-- MODIFIABLE : Coordonnées -->
                 <h3>Le Bistrot Gourmet</h3>
                 <p>12 Rue de la Gastronomie, 75001 Paris</p>
                 <p>Tél : 01 42 68 00 00</p>
             </div>
             <div>
-                <!-- MODIFIABLE : Horaires -->
                 <h3>Horaires</h3>
                 <p>Mardi - Samedi : 12h00 - 14h30 | 19h00 - 22h30</p>
                 <p>Dimanche & Lundi : Fermé</p>

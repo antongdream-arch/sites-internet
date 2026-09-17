@@ -1,5 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     
+    // 1. GESTION DU MENU HAMBURGER MOBILE
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+        });
+
+        // Fermer le menu au clic sur un lien
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+            });
+        });
+    }
+
+    // 2. ANIMATION AU SCROLL (IntersectionObserver)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -10,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
+    // 3. PANIER CLICK & COLLECT SIMPLIFIÉ
     let total = 0;
     const cartItemsContainer = document.getElementById("cart-items");
     const cartPriceElement = document.getElementById("cart-price");
@@ -34,37 +53,42 @@ document.addEventListener("DOMContentLoaded", () => {
             cartItemsContainer.appendChild(itemElement);
 
             total += prix;
-            cartPriceElement.textContent = total;
+            if (cartPriceElement) cartPriceElement.textContent = total;
         });
     });
 
-    document.getElementById("order-form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (total === 0) {
-            /* MODIFIABLE : Message d'erreur panier vide */
-            alert("Veuillez ajouter au moins un plat à votre commande.");
-            return;
-        }
-        /* MODIFIABLE : Message de confirmation après commande */
-        alert(`Votre commande a été envoyée ! Montant à régler lors du retrait : ${total} €.`);
-    });
-});
-const filterButtons = document.querySelectorAll(".filter-btn");
-const menuBlocks = document.querySelectorAll(".menu-section-block");
-
-filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        const filterValue = button.getAttribute("data-filter");
-
-        menuBlocks.forEach(block => {
-            if (filterValue === "all" || block.getAttribute("data-category") === filterValue) {
-                block.classList.remove("hidden");
-            } else {
-                block.classList.add("hidden");
+    const orderForm = document.getElementById("order-form");
+    if (orderForm) {
+        orderForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (total === 0) {
+                /* MODIFIABLE : Message d'erreur panier vide */
+                alert("Veuillez ajouter au moins un plat à votre commande.");
+                return;
             }
+            /* MODIFIABLE : Confirmation de commande */
+            alert(`Votre commande a été transmise ! Montant à régler lors du retrait : ${total} €.`);
+        });
+    }
+
+    // 4. FILTRES DE LA PAGE CARTE (menu.html)
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const menuBlocks = document.querySelectorAll(".menu-section-block");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filterValue = button.getAttribute("data-filter");
+
+            menuBlocks.forEach(block => {
+                if (filterValue === "all" || block.getAttribute("data-category") === filterValue) {
+                    block.classList.remove("hidden");
+                } else {
+                    block.classList.add("hidden");
+                }
+            });
         });
     });
 });
